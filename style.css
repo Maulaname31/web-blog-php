@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar */
+body {
+  font-family: 'Geologica', sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  background-color: rgba(51, 51, 51, 0.331);
+  justify-content: space-around;
+  color: #fff;
+  align-items: center;
+  height: 50px;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease; /* Tambahkan properti transition */
+}
+
+nav .logo {
+  letter-spacing: 3px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 30%;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+
+nav ul li a {
+  color: rgb(240, 237, 237);
+  text-decoration: none;
+  font-family: 'Geologica', sans-serif;
+  font-size: 1em;
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  color: rgb(159, 148, 141);
+}
+
+
+nav.scrolled {
+  top: -50px; /* Atur posisi navigasi saat di-scroll */
+}
+
+/* image */
+.full-width-pics {
+  width: 100%;
+  position: relative;
+  margin-top: -50px; /* Adjust the value as needed to position the image behind the navbar */
+  z-index: -3;
+}
+
+.full-width-pics img {
+  width: 100%;
+  max-height: 630px;
+  height: auto;
+}
+
+
+.animated-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  animation: animateText 1.5s forwards;
+}
+
+@keyframes animateText {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.custom-line {
+  display: block;
+  width: 85%;
+  height: 0.8px;
+  background-color: black;
+  margin: 20px 40px 40px 40px;
+  border-radius: 4px
+}
+
+.judul{
+  margin: 45px 0 30px 20px ;
+  font-size: 45px;
+
+}
+
+
+
+/* menu toogle */
+
+.menu-toogle{
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toogle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toogle span{
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(207, 202, 202);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toogle span:nth-child(2){
+  transform-origin: 0 0;
+  
+}
+.menu-toogle span:nth-child(4){
+  transform-origin: 0 100%;
+  
+}
+
+.menu-toogle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(-1px,-1px);
+}
+.menu-toogle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg)translate(-1px,0);
+}
+
+.menu-toogle input:checked ~ span:nth-child(3){
+  transform: scale(0);
+  opacity: 0;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+  nav ul{
+    width: 50%;
+  }
+  .mobile-image {
+    display: none;
+}
+
+.desktop-image {
+    display: block;
+}
+}
+@media screen and (max-width: 767px){
+  nav ul{
+    position: absolute;
+    flex-direction: column;
+    background-color: rgba(10, 10, 10, 0.653);
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 0;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  .menu-toogle{
+    display: flex;
+  }
+
+  nav ul.slide{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .mobile-image{
+    display: block;
+  }
+  .desktop-image {
+    display: none;
+}
+
+}
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {display: none;}
+
+/* card */
+.card-wrapper {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.gambar-container {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.gambar-container img {
+  width: 100%;
+}
+
+.content-container {
+  flex: 1;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: blue;
+}
+
+
+
+
+footer {
+  padding: 1rem 0;
+  background-color: #333;
+}
+
+footer .container {
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
